@@ -1,0 +1,635 @@
+ @import url('https://fonts.googleapis.com/css2?family=Livvic:wght@300,400,500,600,700,800&family=McLaren&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar design */
+
+.navStyle {
+    background-color: white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.logo {
+    height: 4rem;
+    width: 10rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navElements {
+    display: flex;
+    color: #7F7F90;
+    gap: 2rem;
+    list-style: none;
+    cursor: pointer;
+}
+
+.navElements li {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 42px;
+    text-decoration: none solid rgb(98, 100, 106);
+    margin-top: auto;
+}
+
+.navElements li a {
+    position: relative;
+    text-decoration: none;
+    color: #7F7F90;
+}
+
+.navElements li a:after {
+    content: "";
+    position: absolute;
+    background-color:#d86519;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.4s;
+}
+
+.navElements li a:hover::after  {
+    width: 100%;
+}
+
+.navElements li a:hover,
+.navElements li a.active {
+    color: black;
+}
+
+.navStyle.active {
+    color: #d86519;
+}
+
+
+.btn {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-family:  'Livvic', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 2.5rem;
+  padding: calc(.80rem - 1px) calc(0.9rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  width: auto;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.sign_in {
+    background-color: #EF6B0B;
+    color: white;
+}
+
+.sign_in:hover {
+    background-color: white;
+    border: 1px solid #EF6B0B;
+    color: #EF6B0B;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.sign_up {
+    background-color: #EF6B0B;
+    color: white;
+}
+
+.sign_up:hover {
+    background-color: white;
+    border: 1px solid #EF6B0B;
+    color: #EF6B0B;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+/* Hambarger design */
+.hambarger {
+    font-size: 2rem;
+    margin: auto;
+    display: none;
+}
+
+.profile-icon {
+    font-size: 2rem;
+    margin: auto;
+    display: none;
+}
+
+@media screen and (max-width: 1150px) {
+    .navStyle {
+        justify-content: space-between;
+    }
+    .hambarger {
+      display: block;
+    }
+    .navElements {
+        display: none;
+        position: absolute;
+        top: 4.6rem;
+        right: 0%;
+        flex-direction: column;
+        gap: 5px;
+        background-color: white;
+        width: 20rem;
+        padding: 2rem;
+        z-index: 1;
+        transform: translateX(100%);
+        animation: slideIn 0.4s ease-in-out forwards;
+    }
+
+    .navElements.open {
+        display: none;
+      }
+    
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+}
+
+@media screen and (max-width: 600px) {
+    .profile-icon {
+        display: block;
+    }
+    .sign_up {
+        display: none;
+    }
+    .sign_in {
+       display: none;
+    }
+}
+
+/* Home section design */
+
+.btn-book {
+    background-color: #d86519;
+    color: white;
+    border-radius: 30px;
+    display: block;
+    margin: auto;
+}
+
+.btn-book:hover {
+    background-color: #EF6B0B;
+}
+
+.home-title {
+    color: white;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Livvic', sans-serif;
+    font-weight: 800;
+}
+
+.home-subtitle {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 12px 0px;
+    margin-bottom: 18px;
+}
+
+.dropdown {
+    width: 15rem;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.dropdown option {
+    font-size: 1rem;
+}
+
+.dropdown option:checked {
+    background-color: #c1c1cb;
+}
+
+.btn-search {
+    background-color: #EF6B0B;
+    color: white;
+}
+
+
+/* sign up and sign in page design */
+
+.signin {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 25rem;
+        height: 23rem;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.signup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: fit-content;
+    padding: 3rem 1rem;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.signup_fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.signtitle {
+    font-size: 1.4rem;
+    color: #7F7F90;
+    text-align: center;
+}
+
+.sign-btn {
+    width: 95%;
+    background-color:#EF6B0B;
+    margin: 1rem auto;
+    color: white;
+}
+
+@media screen and (max-width: 600px){
+    .signin {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 1220px){
+    .signup {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 840px){
+    .signup {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 700px){
+    .signup {
+        width: 90%;
+    }
+}
+
+/* Book form design */
+
+.book {
+        position: absolute;
+        top: 7rem;
+        background-color: #f7f7f7;
+        width: 60%;
+        height: fit-content;
+        border-radius: 10;
+        margin: auto;
+        padding: 2rem;
+        background: white;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-book-form {
+    width: 12rem;
+    background-color: #d86519;
+    color: white;
+    border-radius: 30px;
+    display: block;
+    margin: auto;
+}
+
+.book-title {
+    text-align: center;
+    margin: 0.5rem 0;
+    font-size: 1.4rem;
+    color:#F58F45;
+}
+
+@media screen and (max-width: 600px){
+    .book {
+        width: 90%;
+}
+}
+
+
+/* About section design */
+
+#about {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.abouttitle {
+    color: #EF6B0B;
+    font-weight: 800;
+    margin-left: 2rem;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background: "white";
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+#about img {
+    width: 40%;
+    height: 40%;
+}
+
+.about-description {
+        text-align: justify;
+        color: black;
+        font-size: 16px;
+        padding: 2rem;
+}
+    
+@media screen and (max-width: 900px) {
+    #about img {
+        display: none;
+    }
+    .about-section {
+        width: 100%;
+        padding: 2rem;
+        margin: 1rem;
+    }
+    .about-description {
+        text-align: justify;
+        color: black;
+        font-size: 16px;
+        padding: 2rem;
+        width: 100%;
+}
+}
+
+@media screen and (max-width: 500px){
+    .about-section {
+        padding: 1rem 0;
+    }
+}
+
+/* why choose design */
+.choose {
+    transition: all 0.5s ease-in-out;
+}
+
+.choose:hover {
+   transform: scale(1.07);
+}
+
+.choosetitle {
+    color: #EF6B0B;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#choose {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0;
+    background-color: #f8f8f9;
+}
+
+.choose-icon {
+    color: #EF6B0B;
+    font-size: 3rem;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.choose-icon:hover {
+    color: #d86519;
+}
+
+/* popular locations design */
+
+.locations {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5rem;
+}
+
+.location-title {
+    color: #EF6B0B;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 6rem;
+}
+
+.location-comp {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.location-comp p {
+    font-size: 18px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    position: absolute;
+    bottom: 1rem;
+    left: 8rem;
+    cursor: pointer;
+}
+
+.location-comp p:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.location-comp img {
+    width:22rem;
+    height: 18rem;
+    border-radius: 10px;
+}
+
+.location-comp img:hover {
+    transform: scale(1.1);
+    transition: all 0.8s;
+}
+
+/* Events design */
+
+#events {
+    background-color:hsl(240, 8%, 97%);
+    margin: 5rem 0;
+}
+
+.eventstitle {
+    color: #EF6B0B;
+    font-weight: 800;
+    text-align: center;
+    padding: 6rem 0;
+    font-size: 2rem;
+}
+
+/* Get started design */
+
+.started {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.getStarted-title{
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* Contact section design  */
+
+#contact {
+        background-color: #f7f7f7;
+        width: 80%;
+        height: fit-content;
+        border-radius: 10px;
+        margin: auto;
+        padding: 2rem;
+        background: white;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-input {
+    width: 80%;
+    height: 3.1rem;
+    padding: 15px;
+    outline-Color: lightblue;
+    font-size: 16px;
+    margin: 1rem;
+  }
+
+.contacttitle {
+    color: #EF6B0B;
+    font-weight: 800;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+@media screen and (max-width: 500px){
+    #contact {
+        width: 92%;
+        height: fit-content;
+    }
+    .contact-input {
+        width: 100%;
+        padding: 5px;
+      }
+}
+
+
+/* footer design */
+
+.footer {
+   background-color: #302d34;
+   color: white;
+   text-align: center;
+   padding: 2rem 1rem;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1rem;
+   justify-content: space-between;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer-home {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-home:hover {
+    color: #d86519;
+}
+
+.footer-icons a {
+    color: white;
+    font-size: 1.5rem;
+}
+.footer-icons a:hover {
+    color: #d86519;
+}
